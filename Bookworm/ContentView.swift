@@ -34,8 +34,6 @@ struct ContentView: View {
                         HStack {
                             EmojiRatingView(rating: book.rating)
                                 .font(.largeTitle)
-
-                            
                             VStack(alignment: .leading) {
                                 Text(book.title ?? "Unknown Title")
                                     .font(.headline)
@@ -46,6 +44,7 @@ struct ContentView: View {
                                     .foregroundColor(.secondary)
                             }
                         }
+                        
                     }
                 }
                 .onDelete(perform: deleteBooks)
@@ -60,6 +59,7 @@ struct ContentView: View {
                         showingAddScreen.toggle()
                     } label: {
                         Label("Add Book", systemImage: "plus")
+                            .accessibilityLabel("Add a New Book")
                     }
                 }
             }
